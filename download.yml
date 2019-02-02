@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: download the file
+    get_url:
+      url: https://www.7-zip.org/a/7z1806-x64.exe
+      dest: /tmp/

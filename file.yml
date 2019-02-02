@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  become: yes
+  vars:
+    - test: opt
+  tasks:
+  - name: create new file
+    file: 
+      path: '/{{ test }}/{{ item }}'
+      state: directory 
+    with_items:
+      - test1
+      - test2
+      - test3
+      - test4

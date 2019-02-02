@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: creating new user
+    user:
+      name: sitaram
+      state: present
+    register: anand
+    tags: create
+
+  - debug:
+      var: anand
+    tags: create    
+
+  - name: remove user
+    user:
+      name: anand 
+      state: absent
+    tags: remove

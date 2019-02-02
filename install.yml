@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: install git 
+    yum:
+      name: git
+      state: present
+    tags: install    
+
+  - name: install httpd
+    yum:
+      name: httpd
+      state: present
+    tags: install
+
+  - name: install wget
+    yum:
+      name: wget
+      state: present
+    tags: install
+
+  - name: uninstall packages
+    yum:
+      name: "{{ item }}"
+      state: removed
+    with_items:
+      - git
+      - wget
+      - httpd
+    tags: uninstall

@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: create new file
+    command: touch sitaram

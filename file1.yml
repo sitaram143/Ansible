@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: file createing
+    file:
+      path: /tmp/sitarama.txt
+      state: touch

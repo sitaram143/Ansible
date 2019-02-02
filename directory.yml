@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: create new directory 
+    file: 
+      path: /tmp/filemodule
+      state: directory
+
+  - name: delete a file
+    file:
+      path: sitaram
+      state: absent
+
+  - name: delete a direcory
+    file:
+      path: /tmp/filemodule
+      state: absent
